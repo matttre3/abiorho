@@ -1,0 +1,29 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "Agrandir Regular";
+  src: url("/public/fonts/PPAgrandir-Regular.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Agrandir Heavy";
+  src: url("/public/fonts/PPAgrandir-GrandHeavy.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Agrandir Bold";
+  src: url("/public/fonts/PPAgrandir-PPAgrandirText-Bold.otf")
+    format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  background-color: #0068bb;
+}
