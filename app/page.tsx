@@ -1,5 +1,3 @@
-import Image from "next/image";
-
 export default function Home() {
   return (
     <div className="container mx-auto max-w-[500px] pl-10 pr-10 pt-10">
