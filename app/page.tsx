@@ -1,4 +1,18 @@
+import Gallery from "@/components/Gallery";
+
 export default function Home() {
+  const images = [
+    "/images/1.JPG",
+    "/images/2.JPG",
+    "/images/3.jpg",
+    "/images/4.JPG",
+    "/images/8.jpg",
+    "/images/5.JPG",
+    "/images/6.JPG",
+    "/images/7.JPG",
+    "/images/9.jpg",
+  ];
+
   return (
     <div className="container mx-auto max-w-[500px] pl-10 pr-10 pt-10">
       <h1 className="font-agrandirBold font-extrabold text-4xl md:text-6xl text-yellowAbio">
@@ -51,6 +65,7 @@ export default function Home() {
           </p>
         </a>
       </div>
+      <Gallery photoType="vertical" images={images}></Gallery>
     </div>
   );
 }
