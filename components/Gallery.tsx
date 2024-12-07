@@ -12,7 +12,7 @@ type GalleryProps = {
 };
 
 export default function Gallery({ images, photoType }: GalleryProps) {
-  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: false }, [Autoplay()]);
+  const [emblaRef] = useEmblaCarousel({ loop: false }, [Autoplay()]);
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
   const openModal = useCallback((image: string) => {
