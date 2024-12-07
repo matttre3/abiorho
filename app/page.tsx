@@ -2,8 +2,6 @@ import Gallery from "@/components/Gallery";
 
 export default function Home() {
   const images = [
-    "/images/1.jpg",
-    "/images/2.jpg",
     "/images/3.jpg",
     "/images/4.jpg",
     "/images/8.jpg",
@@ -11,6 +9,8 @@ export default function Home() {
     "/images/6.jpg",
     "/images/7.jpg",
     "/images/9.jpg",
+    "/images/1.jpg",
+    "/images/2.jpg",
   ];
 
   return (

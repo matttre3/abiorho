@@ -1,10 +1,9 @@
 "use client";
-import React, { useState, useCallback } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import Image from "next/image";
 import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
 import classNames from "classnames";
-import { motion, AnimatePresence } from "framer-motion"; // Importa Framer Motion
 
 type GalleryProps = {
   images: string[];
@@ -12,78 +11,68 @@ type GalleryProps = {
 };
 
 export default function Gallery({ images, photoType }: GalleryProps) {
-  const [emblaRef] = useEmblaCarousel({ loop: false }, [Autoplay()]);
-  const [selectedImage, setSelectedImage] = useState<string | null>(null);
+  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: false }, [Autoplay()]);
+  const [canScrollNext, setCanScrollNext] = useState(false);
+  const [canScrollPrev, setCanScrollPrev] = useState(false);
 
-  const openModal = useCallback((image: string) => {
-    setSelectedImage(image);
-  }, []);
+  // Funzione per aggiornare lo stato delle frecce
+  const updateScrollButtons = useCallback(() => {
+    if (!emblaApi) return;
+    setCanScrollNext(emblaApi.canScrollNext());
+    setCanScrollPrev(emblaApi.canScrollPrev());
+  }, [emblaApi]);
 
-  const closeModal = () => {
-    setSelectedImage(null);
-  };
+  // Inizializza e aggiorna lo stato delle frecce
+  useEffect(() => {
+    if (!emblaApi) return;
+    updateScrollButtons();
+    emblaApi.on("select", updateScrollButtons);
+    emblaApi.on("reInit", updateScrollButtons);
+  }, [emblaApi, updateScrollButtons]);
 
   const gallerySizes = classNames({
-    "flex-[0_0_50%] md:flex-[0_0_32.6%]": photoType === "horizontal",
-    "flex-[0_0_50%] md:flex-[0_0_25%]": photoType === "vertical",
+    "flex-[0_0_50%] md:flex-[0_0_32.6%] h-fit": photoType === "horizontal",
+    "flex-[0_0_100%] md:flex-[0_0_25%] h-fit": photoType === "vertical",
   });
 
   return (
-    <>
-      <div className="container mt-10">
-        <div className="overflow-hidden" ref={emblaRef}>
-          <div className="flex gap-5 md:gap-10">
-            {images.map((image, index) => (
-              <div key={index} className={gallerySizes}>
-                <Image
-                  src={image}
-                  alt="prova"
-                  width={600}
-                  height={200}
-                  onClick={() => openModal(image)} // Apre il modal al cliccare sull'immagine
-                  className="cursor-pointer"
-                />
-              </div>
-            ))}
-          </div>
+    <div className="container mt-10 relative h-fit">
+      {/* Carousel */}
+      <div className="overflow-hidden h-fit" ref={emblaRef}>
+        <div className="flex gap-5 md:gap-10 h-fit">
+          {images.map((image, index) => (
+            <div key={index} className={gallerySizes}>
+              <Image
+                src={image}
+                alt="prova"
+                width={600}
+                height={200}
+                className="cursor-pointer"
+              />
+            </div>
+          ))}
         </div>
       </div>
 
-      {/* Modal per visualizzare l'immagine ingrandita */}
-      <AnimatePresence>
-        {selectedImage && (
-          <motion.div
-            className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-75"
-            onClick={closeModal}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.2 }}
-          >
-            <motion.div
-              className="relative"
-              initial={{ scale: 0.8 }}
-              animate={{ scale: 1 }}
-              exit={{ scale: 0.8 }}
-              transition={{ duration: 0.2 }}
-            >
-              <Image
-                src={selectedImage}
-                alt="Ingrandita"
-                className="max-h-screen w-full"
-                width={photoType == "horizontal" ? 500 : 400}
-                height={photoType == "horizontal" ? 600 : 200}
-              />
-              <button
-                className="absolute right-2 top-2 text-2xl text-white"
-                onClick={closeModal}
-              >
-                &times;
-              </button>
-            </motion.div>
-          </motion.div>
-        )}
-      </AnimatePresence>
-    </>
+      {/* Pulsanti per le frecce */}
+      <button
+        onClick={() => emblaApi?.scrollPrev()}
+        disabled={!canScrollPrev}
+        className={`absolute left-0 top-1/2 transform -translate-y-1/2 bg-black text-white p-3 rounded-full ${
+          !canScrollPrev ? "hidden" : "opacity-50"
+        }`}
+      >
+        &lt;
+      </button>
+      <button
+        onClick={() => emblaApi?.scrollNext()}
+        disabled={!canScrollNext}
+        className={`absolute right-0 top-1/2 transform -translate-y-1/2 bg-black text-white p-3 rounded-full ${
+          !canScrollNext ? "hidden" : "opacity-50"
+        }`}
+      >
+        &gt;
+      </button>
+    </div>
   );
 }
