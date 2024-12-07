@@ -15,9 +15,9 @@ export default {
         blueAbio: "#0068bb",
       },
       fontFamily: {
-        agrandir: ['"Agrandir Regular"', "sans-serif"],
-        agrandirHeavy: ['"Agrandir Heavy"', "sans-serif"],
-        agrandirBold: ['"Agrandir Bold"', "sans-serif"],
+        agrandir: ["Agrandir Regular", "sans-serif"],
+        agrandirHeavy: ["Agrandir Heavy", "sans-serif"],
+        agrandirBold: ["Agrandir Bold", "sans-serif"],
       },
     },
   },
