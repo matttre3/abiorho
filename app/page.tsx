@@ -41,7 +41,23 @@ export default function Home() {
         </li>
       </ul>
 
-      <div className="flex items-center justify-center flex-col mt-5">
+      <hr className="mt-6 mb-6" />
+
+      <div className="bg-yellowAbio rounded-xl p-3">
+        <p className=" text-blueAbio text-center font-agrandir text-2xl md:text-3xl ">
+          Primo incontro informativo: <br />
+          <span className="font-extrabold">
+            13 Gennaio 2025 dalle 16:00 a Rho
+          </span>
+        </p>
+      </div>
+
+      <p className="text-white text-2xl mt-4 font-extrabold text-center">
+        Per maggiori informazioni: <br />
+        ⬇️⬇️⬇️⬇️
+      </p>
+
+      <div className="flex items-center justify-center flex-col mt-2">
         <a
           className="flex items-center justify-center flex-col gap-2"
           href="tel:+393338257579"
@@ -57,7 +73,7 @@ export default function Home() {
           href="mailto:formazione@abiorho.org"
         >
           <button className="bg-yellowAbio px-4 py-2 rounded mt-5 font-agrandirBold font-extrabold text-blueAbio flex items-center justify-center gap-4">
-            SCRIVICI UNA MAIL
+            SCRIVI UNA MAIL
             <img src="/envelope.png" alt="" />
           </button>
           <p className="font-agrandir text-white opacity-40">
@@ -65,6 +81,7 @@ export default function Home() {
           </p>
         </a>
       </div>
+
       <Gallery photoType="vertical" images={images}></Gallery>
     </div>
   );
