@@ -1,5 +1,5 @@
 import Gallery from "@/components/Gallery";
-
+import Image from "next/image";
 export default function Home() {
   const images = [
     "/images/3.jpg",
@@ -14,10 +14,11 @@ export default function Home() {
   ];
 
   return (
-    <div className="container mx-auto max-w-[500px] pl-10 pr-10 pt-10">
+    <div className="container mx-auto max-w-[500px] pl-10 pr-10 pt-10 pb-10">
       <h1 className="font-agrandirBold font-extrabold text-4xl md:text-6xl text-yellowAbio">
         DIVENTA <br /> VOLONTARIO
       </h1>
+
       <p className="font-agrandir text-xl md:text-2xl mt-4 text-white">
         Cherchiamo persone che vogliano mettersi in gioco e hanno il desiderio
         di portare un sorriso ai{" "}
@@ -79,6 +80,30 @@ export default function Home() {
           <p className="font-agrandir text-white opacity-40">
             formazione@abiorho.org
           </p>
+        </a>
+      </div>
+      <div className="flex items-center justify-center gap-10 mt-10">
+        <a
+          href="https://www.facebook.com/ABIORHO/?locale=it_IT
+        "
+        >
+          <Image
+            width={50}
+            height={50}
+            src="/images/facebook-brands-solid.svg"
+            alt="facebook"
+          ></Image>
+        </a>
+        <a
+          href="https://www.instagram.com/abio_rho/
+        "
+        >
+          <Image
+            width={50}
+            height={50}
+            src="/images/instagram-brands-solid.svg"
+            alt="instagram"
+          ></Image>
         </a>
       </div>
 
