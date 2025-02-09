@@ -44,15 +44,6 @@ export default function Home() {
 
       <hr className="mt-6 mb-6" />
 
-      <div className="bg-yellowAbio rounded-xl p-3">
-        <p className=" text-blueAbio text-center font-agrandir text-2xl md:text-3xl ">
-          Primo incontro informativo: <br />
-          <span className="font-extrabold">
-            13 Gennaio 2025 dalle 16:00 a Rho
-          </span>
-        </p>
-      </div>
-
       <p className="text-white text-2xl mt-4 font-extrabold text-center">
         Per maggiori informazioni: <br />
         ⬇️⬇️⬇️⬇️
