@@ -48,9 +48,14 @@ export default function Home() {
           <span>alla volta</span>
           <b>✦</b>
         </div>
+
+        <a className="scroll-cue" href="#come-partecipare" aria-label="Vai alla sezione come partecipare">
+          <span>SCOPRI COME</span>
+          <b aria-hidden="true">↓</b>
+        </a>
       </section>
 
-      <section className="details-section" aria-labelledby="requirements-title">
+      <section id="come-partecipare" className="details-section" aria-labelledby="requirements-title">
         <div className="section-kicker">COME PARTECIPARE</div>
         <h2 id="requirements-title">PER DIVENTARE VOLONTARIO:</h2>
         <ul className="requirements-list">
