@@ -82,6 +82,16 @@ export default function Home() {
             <span className="contact-label">SCRIVI UNA MAIL</span>
             <span className="contact-value">formazione@abiorho.org</span>
           </a>
+          <a
+            className="contact-card"
+            href="https://wa.me/message/73GRVV7TT4GJH1"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <span className="contact-icon"><Image src="/images/whatsapp.svg" alt="" width={28} height={28} /></span>
+            <span className="contact-label">SCRIVICI SU WHATSAPP</span>
+            <span className="contact-value">Apri la chat</span>
+          </a>
         </div>
 
         <div className="social-row">
