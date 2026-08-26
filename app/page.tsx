@@ -1,104 +1,99 @@
 import Gallery from "@/components/Gallery";
 import Image from "next/image";
+
+const images = [
+  "/images/3.jpg",
+  "/images/4.jpg",
+  "/images/8.jpg",
+  "/images/5.jpg",
+  "/images/6.jpg",
+  "/images/7.jpg",
+  "/images/9.jpg",
+  "/images/1.jpg",
+  "/images/2.jpg",
+];
+
 export default function Home() {
-  const images = [
-    "/images/3.jpg",
-    "/images/4.jpg",
-    "/images/8.jpg",
-    "/images/5.jpg",
-    "/images/6.jpg",
-    "/images/7.jpg",
-    "/images/9.jpg",
-    "/images/1.jpg",
-    "/images/2.jpg",
-  ];
-
   return (
-    <div className="container mx-auto max-w-[500px] pl-10 pr-10 pt-10 pb-10">
-      <h1 className="font-agrandirBold font-extrabold text-4xl md:text-6xl text-yellowAbio">
-        DIVENTA <br /> VOLONTARIO
-      </h1>
+    <main className="site-shell">
+      <div className="ambient ambient-one" />
+      <div className="ambient ambient-two" />
 
-      <p className="font-agrandir text-xl md:text-2xl mt-4 text-white">
-        Cherchiamo persone che vogliano mettersi in gioco e hanno il desiderio
-        di portare un sorriso ai{" "}
-        <span className="text-yellowAbio font-extrabold">bambini</span>{" "}
-        ospedalizzati dei{" "}
-        <span className="text-yellowAbio font-extrabold">
-          reparti di pediatria
-        </span>{" "}
-        di Garbagnate Milanese e Rho
-      </p>
+      <section className="hero-section" aria-labelledby="page-title">
+        <div className="brand-row">
+          <span className="brand-mark">ABIO</span>
+          <span className="brand-divider" />
+          <span className="brand-subtitle">RHO</span>
+        </div>
 
-      <h2 className="font-agrandirBold font-extrabold text-2xl text-white mt-10">
-        PER DIVENTARE VOLONTARIO:
-      </h2>
-      <ul className="">
-        <li className=" before:content-['⭐'] before:mr-2 font-agrandir text-xl font-medium text-white mt-4">
-          Età compresa tra i 18 e i 69
-        </li>
-        <li className="before:content-['⭐'] before:mr-2 font-agrandir text-xl font-medium text-white mt-2 ">
-          Frequentare il corso di formazione da 5 incontri
-        </li>
-      </ul>
-
-      <hr className="mt-6 mb-6" />
-
-      <p className="text-white text-2xl mt-4 font-extrabold text-center">
-        Per maggiori informazioni: <br />
-        ⬇️⬇️⬇️⬇️
-      </p>
-
-      <div className="flex items-center justify-center flex-col mt-2">
-        <a
-          className="flex items-center justify-center flex-col gap-2"
-          href="tel:+393338257579"
-        >
-          <button className="bg-yellowAbio px-4 py-2 rounded mt-5 font-agrandirBold font-extrabold text-blueAbio flex items-center justify-center gap-4">
-            CHIAMA ORA
-            <img src="/phone.png" alt="" />
-          </button>
-          <p className="font-agrandir text-white opacity-40">+39 3338257579</p>
-        </a>
-        <a
-          className="flex items-center justify-center flex-col gap-2"
-          href="mailto:formazione@abiorho.org"
-        >
-          <button className="bg-yellowAbio px-4 py-2 rounded mt-5 font-agrandirBold font-extrabold text-blueAbio flex items-center justify-center gap-4">
-            SCRIVI UNA MAIL
-            <img src="/envelope.png" alt="" />
-          </button>
-          <p className="font-agrandir text-white opacity-40">
-            formazione@abiorho.org
+        <div className="hero-copy">
+          <p className="eyebrow">UNISCITI A NOI</p>
+          <h1 id="page-title">
+            DIVENTA <span>VOLONTARIO</span>
+          </h1>
+          <p className="intro">
+            Cherchiamo persone che vogliano mettersi in gioco e hanno il desiderio
+            di portare un sorriso ai <strong>bambini</strong> ospedalizzati dei{" "}
+            <strong>reparti di pediatria</strong> di Garbagnate Milanese e Rho
           </p>
-        </a>
-      </div>
-      <div className="flex items-center justify-center gap-10 mt-10">
-        <a
-          href="https://www.facebook.com/ABIORHO/?locale=it_IT
-        "
-        >
-          <Image
-            width={50}
-            height={50}
-            src="/images/facebook-brands-solid.svg"
-            alt="facebook"
-          ></Image>
-        </a>
-        <a
-          href="https://www.instagram.com/abio_rho/
-        "
-        >
-          <Image
-            width={50}
-            height={50}
-            src="/images/instagram-brands-solid.svg"
-            alt="instagram"
-          ></Image>
-        </a>
-      </div>
+        </div>
 
-      <Gallery photoType="vertical" images={images}></Gallery>
-    </div>
+        <div className="hero-badge" aria-hidden="true">
+          <span>un sorriso</span>
+          <span>alla volta</span>
+          <b>✦</b>
+        </div>
+      </section>
+
+      <section className="details-section" aria-labelledby="requirements-title">
+        <div className="section-kicker">COME PARTECIPARE</div>
+        <h2 id="requirements-title">PER DIVENTARE VOLONTARIO:</h2>
+        <ul className="requirements-list">
+          <li><span>01</span>Età compresa tra i 18 e i 69</li>
+          <li><span>02</span>Frequentare il corso di formazione da 5 incontri</li>
+        </ul>
+      </section>
+
+      <section className="contact-section" aria-labelledby="contact-title">
+        <div className="contact-heading">
+          <span className="line" />
+          <h2 id="contact-title">Per maggiori informazioni:</h2>
+          <span className="arrow">↓</span>
+        </div>
+
+        <div className="contact-actions">
+          <a className="contact-card" href="tel:+393****7579">
+            <span className="contact-icon"><Image src="/phone.png" alt="" width={28} height={28} /></span>
+            <span className="contact-label">CHIAMA ORA</span>
+            <span className="contact-value">+39 3338257579</span>
+          </a>
+          <a className="contact-card" href="mailto:formazione@abiorho.org">
+            <span className="contact-icon"><Image src="/envelope.png" alt="" width={28} height={28} /></span>
+            <span className="contact-label">SCRIVI UNA MAIL</span>
+            <span className="contact-value">formazione@abiorho.org</span>
+          </a>
+        </div>
+
+        <div className="social-row">
+          <span>SEGUICI</span>
+          <a href="https://www.facebook.com/ABIORHO/?locale=it_IT" target="_blank" rel="noreferrer" aria-label="Facebook ABIO Rho">
+            <Image width={22} height={22} src="/images/facebook-brands-solid.svg" alt="facebook" />
+          </a>
+          <a href="https://www.instagram.com/abio_rho/" target="_blank" rel="noreferrer" aria-label="Instagram ABIO Rho">
+            <Image width={22} height={22} src="/images/instagram-brands-solid.svg" alt="instagram" />
+          </a>
+        </div>
+      </section>
+
+      <section className="gallery-section" aria-label="Momenti ABIO Rho">
+        <div className="gallery-heading">
+          <span>ABIO RHO</span>
+          <span>INSIEME È PIÙ BELLO</span>
+        </div>
+        <Gallery images={images} photoType="vertical" />
+      </section>
+
+      <footer>ABIO RHO · VOLONTARI PER I BAMBINI IN OSPEDALE</footer>
+    </main>
   );
 }
