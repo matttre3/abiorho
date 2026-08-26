@@ -73,12 +73,12 @@ export default function Home() {
 
         <div className="contact-actions">
           <a className="contact-card" href="tel:+393****7579">
-            <span className="contact-icon"><Image src="/phone.png" alt="" width={28} height={28} /></span>
+            <span className="contact-icon"><Image src="/images/phone-blue.svg" alt="" width={28} height={28} /></span>
             <span className="contact-label">CHIAMA ORA</span>
             <span className="contact-value">+39 3338257579</span>
           </a>
           <a className="contact-card" href="mailto:formazione@abiorho.org">
-            <span className="contact-icon"><Image src="/envelope.png" alt="" width={28} height={28} /></span>
+            <span className="contact-icon"><Image src="/images/envelope-blue.svg" alt="" width={28} height={28} /></span>
             <span className="contact-label">SCRIVI UNA MAIL</span>
             <span className="contact-value">formazione@abiorho.org</span>
           </a>
@@ -88,7 +88,7 @@ export default function Home() {
             target="_blank"
             rel="noreferrer"
           >
-            <span className="contact-icon"><Image src="/images/whatsapp.svg" alt="" width={28} height={28} /></span>
+            <span className="contact-icon"><Image src="/images/whatsapp-blue.svg" alt="" width={28} height={28} /></span>
             <span className="contact-label">SCRIVICI SU WHATSAPP</span>
             <span className="contact-value">Apri la chat</span>
           </a>
@@ -97,10 +97,10 @@ export default function Home() {
         <div className="social-row">
           <span>SEGUICI</span>
           <a href="https://www.facebook.com/ABIORHO/?locale=it_IT" target="_blank" rel="noreferrer" aria-label="Facebook ABIO Rho">
-            <Image width={22} height={22} src="/images/facebook-brands-solid.svg" alt="facebook" />
+            <Image width={20} height={20} src="/images/facebook-blue.svg" alt="facebook" />
           </a>
           <a href="https://www.instagram.com/abio_rho/" target="_blank" rel="noreferrer" aria-label="Instagram ABIO Rho">
-            <Image width={22} height={22} src="/images/instagram-brands-solid.svg" alt="instagram" />
+            <Image width={20} height={20} src="/images/instagram-blue.svg" alt="instagram" />
           </a>
         </div>
       </section>

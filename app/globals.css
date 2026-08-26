@@ -94,7 +94,7 @@ h1 span { color: var(--ink); display: block; }
 .contact-value { color: var(--muted); font-size: 13px; margin-top: 5px; }
 .social-row { display: flex; align-items: center; gap: 16px; margin-top: 48px; color: var(--muted); font-size: 11px; letter-spacing: .17em; }
 .social-row a { display: grid; place-items: center; width: 38px; height: 38px; border: 1px solid #d9deea; border-radius: 50%; transition: background .2s, transform .2s; }
-.social-row a:hover { background: var(--blue); border-color: var(--blue); transform: translateY(-2px); }
+.social-row a:hover { background: var(--yellow); border-color: var(--yellow); transform: translateY(-2px); }
 .social-row img { opacity: 1; }
 
 .gallery-section { padding: 0 0 64px; }
