@@ -21,9 +21,14 @@ export default function Home() {
 
       <section className="hero-section" aria-labelledby="page-title">
         <div className="brand-row">
-          <span className="brand-mark">ABIO</span>
-          <span className="brand-divider" />
-          <span className="brand-subtitle">RHO</span>
+          <Image
+            src="/logo-abio-rho.jpg"
+            alt="ABIO Rho - Associazione per il bambino in ospedale"
+            width={88}
+            height={191}
+            priority
+            className="brand-logo"
+          />
         </div>
 
         <div className="hero-copy">
